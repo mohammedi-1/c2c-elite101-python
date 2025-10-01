@@ -1,27 +1,40 @@
+def get_name():
+    name = input("What's your name? ")
+    length = len(name)
 
-"""
-    Welcome to Elite 101 this program is a starter for your chatbot project.
-    The starter prompts the user to enter their name and then greets them with a personalized message.
+    if length >= 3:
+        print("Wow, what a short name!")
+    else:
+        print("Wow, that's a nice name!")
 
-    Functions:
-        get_user_name(): Prompts the user to enter their name and returns it.
-        greet_user(name): Prints a greeting message using the provided name.
-        main(): Main function that orchestrates the user input and greeting process.
+    print("Hi, " + name)
 
-    Execution:
-        When the script is run directly (not imported as a module), it will execute the main() function.
-"""
+def get_age():
+    age = int(input("How old are you? "))
 
+    if age <= 10:
+        print("Wow! You're still very young!")
+    else:
+        if age <= 24:
+            print("Nice! You must be still in school or college!")
+        else:
+            if age <= 40:
+                print("Cool! You are average age!")
+            else:
+                print("You are pretty old.")
 
-def get_user_name():
-    return input("Please enter your name: ")
+def assist():
+    print("Okay, how can I assist you? Would you like to:\n1. Make me tell you a joke\n2. Give you a riddle\n3. Exit")
+    choice = int(input("Pick an option (1-3): "))
 
-def greet_user(name):
-    print(f"Hello, {name}!")
+    if choice == 1:
+        print("Why did the computer get cold?")
+        print("Because it left its Windows open!!")
+    if choice == 2:
+        print("I have no life but I can die. What am I?\nA battery.")
+    if choice == 3:
+        print("Goodbye. Nice chatting with you.")
 
-def main():
-    user_name = get_user_name()
-    greet_user(user_name)
-
-if __name__ == "__main__":
-    main()
+get_name()
+get_age()
+assist()
